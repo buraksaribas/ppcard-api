@@ -1,0 +1,179 @@
+// User Routes
+
+### User
+GET http://localhost:8000/api/user/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+### Change Password
+POST http://localhost:8000/api/user/change-password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+{
+  "password": "12345678",
+  "password_confirmation": "12345678"
+}
+
+// Auth Routes
+
+###Register Route
+POST http://localhost:8000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@mail.com",
+  "password": "12345678",
+  "password_confirmation": "12345678"
+}
+
+###Login Route
+POST http://localhost:8000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@mail.com",
+  "password": "12345678"
+}
+
+###Forgot Route
+POST http://localhost:8000/api/auth/forgot
+Content-Type: application/json
+
+{
+  "email": "john@mail.com"
+}
+
+###Reset Route
+POST http://localhost:8000/api/auth/reset/6468067a62c8a91b999fa76c/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJpYXQiOjE2ODUzNTYyMzUsImV4cCI6MTY4NTM1NzEzNX0.BEOcpOdsao66b3oaekaI2Pb_7cxcW85vv0sz8QKQwsc
+Content-Type: application/json
+
+{
+  "password": "123456789",
+  "password_confirmation": "123456789"
+}
+
+// FieldTypes Routes
+//-------------------------------
+### Get All
+GET http://localhost:8000/api/field-type/getAll
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+
+### Create
+POST http://localhost:8000/api/field-type/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+{
+  "title": "twitter"
+}
+
+### Update
+PUT http://localhost:8000/api/field-type/update/646806a562c8a91b999fa777
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODQ1MzkwMTMsImV4cCI6MTY4NTE0MzgxM30.JqZfkIGzJSm1LyXjU2yUEUH7PPSM5GWqlXtZmnxKCEtUkZdFGRduPoc-zAUpuuYEOUKLMxXU9hpmshNwr8zCNw
+
+{
+  "title": "linkedin"
+}
+
+### Delete
+DELETE  http://localhost:8000/api/field-type/delete/6467fdf9ec47042c8004012c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODQ1MzkwMTMsImV4cCI6MTY4NTE0MzgxM30.JqZfkIGzJSm1LyXjU2yUEUH7PPSM5GWqlXtZmnxKCEtUkZdFGRduPoc-zAUpuuYEOUKLMxXU9hpmshNwr8zCNw
+
+
+// Field Routes
+//-------------------------------
+### Get All
+GET http://localhost:8000/api/field/getAll
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+### Create
+POST http://localhost:8000/api/field/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+{
+  "title": "official twitter",
+  "value": "@qwerty",
+  "typeId": "647468d97f71258d4eea68fe"
+}
+
+### Update
+PUT http://localhost:8000/api/field/update/6467fb60170f015812f52bac
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODQ1MzkwMTMsImV4cCI6MTY4NTE0MzgxM30.JqZfkIGzJSm1LyXjU2yUEUH7PPSM5GWqlXtZmnxKCEtUkZdFGRduPoc-zAUpuuYEOUKLMxXU9hpmshNwr8zCNw
+
+{
+  "title": "twitster",
+  "value": "asadsd@twitter.com"
+}
+
+### Delete
+DELETE http://localhost:8000/api/field/delete/6467ff550a8f1bbc3cc11c89
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODQ1MzkwMTMsImV4cCI6MTY4NTE0MzgxM30.JqZfkIGzJSm1LyXjU2yUEUH7PPSM5GWqlXtZmnxKCEtUkZdFGRduPoc-zAUpuuYEOUKLMxXU9hpmshNwr8zCNw
+
+
+
+// View Routes
+//-------------------------------
+
+### Get All
+GET http://localhost:8000/api/view/get-all
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+### Get Single
+GET http://localhost:8000/api/view/get-single/6468071b62c8a91b999fa793
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+
+### Create
+POST http://localhost:8000/api/view/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+{
+  "title": "view 2"
+}
+
+### Update
+PUT http://localhost:8000/api/view/update/64680499a48c5851e30e33cf
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY3ZmI0ZjE3MGYwMTU4MTJmNTJiYTgiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODQ1MzY1NzksImV4cCI6MTY4NTE0MTM3OX0.Hcjx1XGgDGZeC0EMzHhAKyjEFE9H0I2DEo6y_i87sXL0vJRm6nqR4k8z76Z16yyWMfEm5SJmdmtPXk3XdHh6vg
+
+{
+  "title": "twitter"
+}
+
+### Delete
+DELETE  http://localhost:8000/api/view/delete/6468070562c8a91b999fa78c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY3ZmI0ZjE3MGYwMTU4MTJmNTJiYTgiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODQ1MzY1NzksImV4cCI6MTY4NTE0MTM3OX0.Hcjx1XGgDGZeC0EMzHhAKyjEFE9H0I2DEo6y_i87sXL0vJRm6nqR4k8z76Z16yyWMfEm5SJmdmtPXk3XdHh6vg
+
+### Add Field
+POST http://localhost:8000/api/view/add-field
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+{
+  "fieldId": "647469207f71258d4eea6908",
+  "viewId": "6468071b62c8a91b999fa793"
+}
+
+### Delete Field
+POST http://localhost:8000/api/view/delete-field
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDY4MDY3YTYyYzhhOTFiOTk5ZmE3NmMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE2ODUzNTA1OTIsImV4cCI6MTY4NTk1NTM5Mn0.A_j2CJMFJvD9XdlndcE44V_9sP951ZyzxGZaQIV9Mrpjf5Uj57L-Ybfnx5iybsBsMYcM4aZ-xkJUZzFwsw3jtw
+
+{
+  "fieldId": "6468070562c8a91b999fa78c",
+  "viewId": "6468071b62c8a91b999fa793"
+}
